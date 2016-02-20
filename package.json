@@ -1,5 +1,5 @@
 {
-  "name": "mobile_first",
+  "name": "flappybird-landingpage",
   "version": "1.0.0",
   "description": "Flappy Bird Clone",
   "main": "index.js",
@@ -34,5 +34,8 @@
     "node-neat": "^1.7.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "uniq": "^1.0.1"
   }
 }
