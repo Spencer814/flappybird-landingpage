@@ -361,86 +361,110 @@ textarea {
 optgroup {
   font-weight: bold; }
 
-body {
-  font-family: Arial, Verdana, sans-serif;
-  text-align: center;
-  margin-bottom: 1em;
-  background-color: #E6FFFF; }
+/* Desktop Screens */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  body {
+    font-family: Arial, Verdana, sans-serif;
+    text-align: center;
+    margin-bottom: 1em;
+    background-color: #E6FFFF; }
+  section {
+    vertical-align: middle; }
+  .hidden {
+    display: none; }
+  button {
+    background-color: #4CAF50;
+    border: 2px solid #008CBA;
+    border-radius: 12px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s; }
+  button:hover {
+    background-color: #008CBA;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); }
+  button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px); }
+  .features {
+    margin-bottom: 2em; }
+  ul {
+    padding-left: 0; }
+  li {
+    list-style: none;
+    display: inline-block;
+    padding: 1em; }
+  li img {
+    border: 2px solid #008CBA;
+    border-radius: 12px; }
+  #contact {
+    margin-bottom: 3em; }
+  #contact li button {
+    background-color: #008CBA;
+    border: 2px solid #4CAF50;
+    padding: 10px; }
+  #contact li button:hover {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); }
+  #contact li button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px); }
+  .call-to-action {
+    margin-bottom: 2em; }
+  .feedback {
+    margin: 3em 25em;
+    padding: 1em;
+    background-color: #E6FFE6;
+    border: 2px solid #008CBA;
+    border-radius: 12px; }
+  .social {
+    margin-bottom: 2em; } }
 
-section {
-  vertical-align: middle; }
+/* Tablet Screens */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  body {
+    margin: auto 1em; }
+  li img {
+    width: 80%; }
+  .hidden {
+    display: inline; }
+  /*.feedback {
+		margin: 3em 25em;
+		padding: 1em;
+		background-color: #E6FFE6;
+		border: 2px solid #008CBA;
+		border-radius: 12px;
+	}
+*/
+  .social {
+    display: none; } }
 
-.hidden {
-  display: none; }
-
-button {
-  background-color: #4CAF50;
-  border: 2px solid #008CBA;
-  border-radius: 12px;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s; }
-
-button:hover {
-  background-color: #008CBA;
-  color: white;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); }
-
-button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px); }
-
-.features {
-  margin-bottom: 2em; }
-
-ul {
-  padding-left: 0; }
-
-li {
-  list-style: none;
-  display: inline-block;
-  padding: 1em; }
-
-li img {
-  border: 2px solid #008CBA;
-  border-radius: 12px; }
-
-#contact {
-  margin-bottom: 3em; }
-
-#contact li button {
-  background-color: #008CBA;
-  border: 2px solid #4CAF50;
-  padding: 10px; }
-
-#contact li button:hover {
-  background-color: #4CAF50;
-  color: white;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); }
-
-#contact li button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px); }
-
-.call-to-action {
-  margin-bottom: 2em; }
-
-.feedback {
-  margin: 3em 25em;
-  padding: 1em;
-  background-color: #E6FFE6;
-  border: 2px solid #008CBA;
-  border-radius: 12px; }
-
-.social {
-  margin-bottom: 2em; }
+/* Phone Screens */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    margin: auto 1em; }
+  li img {
+    width: 80%; }
+  .hidden {
+    display: inline; }
+  /*.feedback {
+		margin: 3em 25em;
+		padding: 1em;
+		background-color: #E6FFE6;
+		border: 2px solid #008CBA;
+		border-radius: 12px;
+	}
+*/
+  .social {
+    display: none; } }
 
 html {
   box-sizing: border-box; }
