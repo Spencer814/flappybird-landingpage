@@ -64,20 +64,6 @@ gulp.task('scripts', function() {
 	return es.concat(home, build);
 });
 
-
-// // JavaScript build task, removes whitespace and concatenates all files
-// gulp.task('scripts', function() {
-// 	return browserify(['js/main.js', 'js/app.js'])
-// 	.bundle()
-// 	.pipe(source('scripts.js'))
-// 	.pipe(buffer())
-// 	.pipe(uglify())
-// 	.pipe(gulp.dest('build/js'));
-// });
-
-
-
-
 // Styles build task, concatenates all files
 gulp.task('styles', function() {
 	return gulp.src('css/styles.css')
