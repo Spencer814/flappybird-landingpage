@@ -11,12 +11,14 @@ var minifyHTML = require('gulp-minify-html');
 var HTMLmin = require('gulp-htmlmin');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
+var cssnano = require('gulp-cssnano');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var es = require('event-stream');
 
 // JavaScript linting task
 gulp.task('jshint', function() {
-	return gulp.src('js/*.js')
+	return gulp.src(['js/main.js', 'js/app.js'])
 	.pipe(jshint())
 	.pipe(jshint.reporter('default'));
 });
@@ -30,7 +32,7 @@ gulp.task('sass', function() {
 
 // Watch task
 gulp.task('watch', function() {
-	gulp.watch('js/*.js', ['jshint']);
+	gulp.watch(['js/main.js', 'js/app.js'], ['jshint']);
 	gulp.watch('scss/*.scss', ['sass']);
 });
 
@@ -47,24 +49,46 @@ gulp.task('html', function() {
 
 // JavaScript build task, removes whitespace and concatenates all files
 gulp.task('scripts', function() {
-	return browserify('js/main.js')
+	var home = browserify(['js/main.js', 'js/app.js'])
 	.bundle()
-	.pipe(source('app.js'))
+	.pipe(source('scripts.js'))
+	.pipe(gulp.dest('js'));
+
+	var build = browserify(['js/main.js', 'js/app.js'])
+	.bundle()
+	.pipe(source('scripts.js'))
 	.pipe(buffer())
 	.pipe(uglify())
 	.pipe(gulp.dest('build/js'));
+
+	return es.concat(home, build);
 });
+
+
+// // JavaScript build task, removes whitespace and concatenates all files
+// gulp.task('scripts', function() {
+// 	return browserify(['js/main.js', 'js/app.js'])
+// 	.bundle()
+// 	.pipe(source('scripts.js'))
+// 	.pipe(buffer())
+// 	.pipe(uglify())
+// 	.pipe(gulp.dest('build/js'));
+// });
+
+
+
 
 // Styles build task, concatenates all files
 gulp.task('styles', function() {
-	return	gulp.src('css/*.css')
+	return gulp.src('css/styles.css')
 	.pipe(concat('styles.css'))
+	.pipe(cssnano())
 	.pipe(gulp.dest('build/css'));
 });
 
 // Image optimization task
 gulp.task('images', function() {
-  return gulp.src('images/*')
+	return gulp.src('images/*')
     .pipe(imagemin())
     .pipe(gulp.dest('build/images'));
 });
