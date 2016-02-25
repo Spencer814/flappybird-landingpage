@@ -10,13 +10,13 @@ $(document).ready(function(){
   });
 
   $('.about').click(function(){
-    $("#about").show();
+    $("#about").removeClass('hidden').show();
     $("#home").hide();
     $("#contact").hide();
   });
 
   $('.contact').click(function(){
-    $("#contact").show();
+    $("#contact").removeClass('hidden').show();
     $("#home").hide();
     $("#about").hide();
   });
