@@ -1,0 +1,4 @@
+# Add Caching.
+<FilesMatch ".(jpg|png|js|css)$">
+    Header set Cache-Control "max-age=5184000"
+</FilesMatch>
