@@ -1,5 +1,166 @@
 @import "css/bootstrap";
 @import "css/bootstrap-theme";
-@import "css/style";
 @import "bourbon/bourbon";
 @import "neat/neat";
+
+//colors
+$color_storm_dust_approx: #666;
+$tranquil: #e6ffff;
+$color_bondi_blue_approx: #008cba;
+$color_log_cabin_approx: #222;
+$color_star_dust_approx: #9d9d9d;
+
+//fonts
+$font_0: Arial;
+$font_1: Verdana;
+$font_2: sans-serif;
+
+@mixin border-radius($radius: 12px, $vertical-radius: 12px) {
+	border-radius: #{$radius} / #{$vertical-radius};
+}
+
+@mixin box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10) {
+	box-shadow: 0 2px $color_storm_dust_approx;
+}
+
+body {
+	font-family: $font_0, $font_1, $font_2;
+	text-align: center;
+	background-color: $tranquil;
+	padding-bottom: 0;
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+.hidden {
+	display: none;
+}
+.btn-space {
+	padding: 5px 2em;
+	margin: 5px;
+}
+.content {
+	padding: 1em 0;
+}
+#home {
+	h2 {
+		margin: 1em 0;
+	}
+	h3 {
+		margin: 1em 0;
+	}
+}
+#contact {
+	h4 {
+		margin: 2em 0;
+	}
+	.row {
+		padding: 1em;
+	}
+	.social {
+		display: none;
+	}
+	.btn {
+		padding: 15px;
+		margin: 10px;
+		font-size: 1.5em;
+	}
+}
+.navbar {
+	padding: 7px 0;
+}
+.navbar-brand {
+	display: none;
+}
+#feedback {
+	width: 95%;
+	margin: 0 auto 1em auto;
+	float: none;
+}
+.social {
+	padding: 1em;
+	background-color: $color_log_cabin_approx;
+	img {
+		padding: 0 5px;
+	}
+	h4 {
+		margin: 5px 0 0;
+		color: $color_star_dust_approx;
+	}
+}
+@media only screen and(min-width: 768px) and(max-width: 1025px) {
+	.btn {
+		font-size: 1.5em;
+	}
+	.navbar-brand {
+		display: none;
+	}
+	.btn-space {
+		padding: 5px 2em;
+		margin: 5px;
+	}
+	.col-md-4 {
+		img {
+			width: 50%;
+		}
+		h2 {
+			font-size: 2.3em;
+			padding-bottom: 15px;
+		}
+		h3 {
+			font-size: 2em;
+			padding-top: 20px;
+			padding-bottom: 30px;
+		}
+	}
+	.social {
+		display: none;
+	}
+	.container h4 {
+		font-size: 1.8em;
+	}
+}
+@media only screen and(min-width: 320px) and(max-width: 767px) {
+	.navbar-brand {
+		display: inline-block;
+	}
+	.btn-space {
+		padding: 5px;
+		margin: 0 5px;
+	}
+	.col-md-4 {
+		img {
+			width: 50%;
+		}
+		h2 {
+			font-size: 2em;
+			padding-top: 1em;
+		}
+		h3 {
+			font-size: 1.5em;
+		}
+	}
+	#about {
+		margin: 0 1em;
+	}
+	#contact {
+		.row {
+			display: none;
+		}
+		.social {
+			display: inline-block;
+			@include border-radius;
+			@include box-shadow(shadow-1, shadow-2, shadow-3, shadow-4, shadow-5, shadow-6, shadow-7, shadow-8, shadow-9, shadow-10);
+		}
+	}
+	.social {
+		display: none;
+	}
+}
+#about h4 {
+	margin: 2em 0;
+}
+.col-md-4 img {
+	border: 2px solid $color_bondi_blue_approx;
+	@include border-radius;
+	width: 80%;
+}
