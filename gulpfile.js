@@ -49,12 +49,12 @@ gulp.task('html', function() {
 
 // JavaScript build task, removes whitespace and concatenates all files
 gulp.task('scripts', function() {
-	var home = browserify(['js/main.js', 'js/app.js', 'js/bootstrap.js'])
+	var home = browserify(['js/main.js', 'js/app.js', 'js/bootstrap.js', 'js/jquery-2.2.1.js'])
 	.bundle()
 	.pipe(source('scripts.js'))
 	.pipe(gulp.dest('js'));
 
-	var build = browserify(['js/main.js', 'js/app.js', 'js/bootstrap.js'])
+	var build = browserify(['js/main.js', 'js/app.js', 'js/bootstrap.js', 'js/jquery-2.2.1.js'])
 	.bundle()
 	.pipe(source('scripts.js'))
 	.pipe(buffer())
