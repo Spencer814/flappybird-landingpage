@@ -16519,3 +16519,29 @@ function config (name) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}]},{},[3,1,2]);
+
+$(document).ready(function(event) {
+
+  var $icon = $(".bounce");
+  $icon.velocity({
+    translateY: "10px"
+  }, {
+    loop: true
+  }).velocity("reverse");
+
+  var $body = $('body');
+
+  var loading = [
+      { elements: $body, properties: { width: '100%' } },
+      { elements: $body, properties: { height: '100%' }, options: { 
+        complete: function () { 
+          $('body').velocity( 'transition.slideUpBigIn' );
+          $('img').velocity( 'transition.flipBounceYIn' );
+        }
+      }
+    }
+  ];
+
+  $.Velocity.RunSequence(loading);
+
+});

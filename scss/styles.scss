@@ -3,14 +3,26 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
-//colors
+/*\colors*/
 $color_storm_dust_approx: #666;
 $tranquil: #e6ffff;
-$color_bondi_blue_approx: #008cba;
+$color_steel_blue_approx: #337ab7;
 $color_log_cabin_approx: #222;
 $color_star_dust_approx: #9d9d9d;
+$color_hint_of_green_approx: #e6ffe6;
+$color_fern_approx: #5cb85c;
+$color_alto_approx: #ddd;
+$color_pink_swan_approx: #bbb;
+$black_50: rgba(0,0,0,.5);
+$color_flush_orange_approx: #f70;
+$color_red_stage_approx: #c60;
+$color_oregon_approx: #940;
+$gold: gold;
+$color_copper_approx: #b57340;
+$golden_grass:  goldenrod;
+$color_yellow_sea_approx: #ea0;
 
-//fonts
+/*\fonts*/
 $font_0: Arial;
 $font_1: Verdana;
 $font_2: sans-serif;
@@ -21,6 +33,18 @@ $font_2: sans-serif;
 
 @mixin box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10) {
 	box-shadow: 0 2px $color_storm_dust_approx;
+}
+
+@mixin text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10) {
+	text-shadow: 1px 1px $golden_grass, 2px 2px $color_copper_approx, .1em .1em .2em $black_50;
+}
+
+@mixin transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10) {
+	transition: all 0.2s;
+}
+	
+@mixin transform-origin($origin-x, $origin-y, $origin-z, $only3d) {
+	transform-origin: 10% 90%;
 }
 
 body {
@@ -85,6 +109,129 @@ body {
 	h4 {
 		margin: 5px 0 0;
 		color: $color_star_dust_approx;
+	}
+}
+.form {
+	text-align: center;
+	background-color: $color_hint_of_green_approx;
+	margin-bottom: 1em;
+	border: 1px solid $color_fern_approx;
+	@include border-radius;
+	width: 50%;
+	/*\Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)*/
+	box-shadow: 0 1px 2px 1px $color_steel_blue_approx;
+}
+.form-horizontal {
+	width: 90%;
+	margin: 0 auto;
+}
+fieldset {
+	width: 50%;
+	margin: 0 4.3em;
+}
+.rating {
+	float: left;
+	> label {
+		&:active {
+			position: relative;
+			top: 2px;
+			left: 2px;
+		}
+		&:hover ~ input:checked ~ label {
+			color: $color_yellow_sea_approx;
+			@include text-shadow(shadow-1, shadow-2, shadow-3, shadow-4, shadow-5, shadow-6, shadow-7, shadow-8, shadow-9, shadow-10);
+		}
+	}
+	&:not(:checked) {
+		> input {
+			position: absolute;
+			top: -9999px;
+			clip: rect(0,0,0,0);
+		}
+		> label {
+			float: right;
+			width: 1.2em;
+			padding: 0 .1em;
+			overflow: hidden;
+			white-space: nowrap;
+			cursor: pointer;
+			font-size: 150%;
+			line-height: 1.2;
+			color: $color_alto_approx;
+			/*\Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)*/
+			text-shadow: 1px 1px $color_pink_swan_approx, 2px 2px $color_storm_dust_approx, .1em .1em .2em $black_50;
+			&:before {
+				content: '★ ';
+			}
+			&:hover {
+				color: $gold;
+				@include text-shadow(shadow-1, shadow-2, shadow-3, shadow-4, shadow-5, shadow-6, shadow-7, shadow-8, shadow-9, shadow-10);
+				~ label {
+					color: $gold;
+					@include text-shadow(shadow-1, shadow-2, shadow-3, shadow-4, shadow-5, shadow-6, shadow-7, shadow-8, shadow-9, shadow-10);
+				}
+			}
+		}
+	}
+	> input:checked {
+		~ label {
+			color: $color_flush_orange_approx;
+			/*\Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)*/
+			text-shadow: 1px 1px $color_red_stage_approx, 2px 2px $color_oregon_approx, .1em .1em .2em $black_50;
+			&:hover {
+				color: $color_yellow_sea_approx;
+				@include text-shadow(shadow-1, shadow-2, shadow-3, shadow-4, shadow-5, shadow-6, shadow-7, shadow-8, shadow-9, shadow-10);
+				~ label {
+					color: $color_yellow_sea_approx;
+					@include text-shadow(shadow-1, shadow-2, shadow-3, shadow-4, shadow-5, shadow-6, shadow-7, shadow-8, shadow-9, shadow-10);
+				}
+			}
+		}
+		+ label:hover {
+			color: $color_yellow_sea_approx;
+			@include text-shadow(shadow-1, shadow-2, shadow-3, shadow-4, shadow-5, shadow-6, shadow-7, shadow-8, shadow-9, shadow-10);
+			~ label {
+				color: $color_yellow_sea_approx;
+				@include text-shadow(shadow-1, shadow-2, shadow-3, shadow-4, shadow-5, shadow-6, shadow-7, shadow-8, shadow-9, shadow-10);
+			}
+		}
+	}
+}
+.navbar-toggle {
+	border: none;
+	background: transparent !important;
+	&:hover {
+		background: transparent !important;
+	}
+	.icon-bar {
+		width: 22px;
+		@include transition(transition-1, transition-2, transition-3, transition-4, transition-5, transition-6, transition-7, transition-8, transition-9, transition-10);
+	}
+	.top-bar {
+		/*\Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)*/
+		transform: rotate(45deg);
+		@include transform-origin(origin-x, origin-y, origin-z, only3d);
+	}
+	.middle-bar {
+		opacity: 0;
+	}
+	.bottom-bar {
+		/*\Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)*/
+		transform: rotate(-45deg);
+		@include transform-origin(origin-x, origin-y, origin-z, only3d);
+	}
+	&.collapsed {
+		.top-bar {
+			/*\Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)*/
+			transform: rotate(0);
+		}
+		.middle-bar {
+			opacity: 1;
+		}
+		.bottom-bar {
+			/*\Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)*/
+			transform: rotate(0);
+		}
 	}
 }
 @media only screen and(min-width: 768px) and(max-width: 1025px) {
@@ -160,7 +307,7 @@ body {
 	margin: 2em 0;
 }
 .col-md-4 img {
-	border: 2px solid $color_bondi_blue_approx;
+	border: 2px solid $color_steel_blue_approx;
 	@include border-radius;
 	width: 80%;
 }
