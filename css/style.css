@@ -31,7 +31,7 @@ body {
 	display: none;
 }
 .col-md-4 img {
-	border: 2px solid #008CBA;
+	border: 2px solid #337ab7;
 	border-radius: 12px;
 	width: 80%;
 }
@@ -61,6 +61,99 @@ body {
 .social h4 {
 	margin: 5px 0 0 0;
 	color: #9d9d9d;
+}
+.form {
+  text-align: center;
+  background-color: #e6ffe6;
+  margin-bottom: 1em;
+  border: 1px solid #5cb85c;
+  border-radius: 12px;
+  width: 50%;
+  box-shadow:0 1px 2px 1px #337ab7;
+}
+.form-horizontal {
+  width: 90%;
+  margin: 0 auto;
+}
+fieldset {
+  width: 50%;
+  margin: 0 4.3em;
+}
+.rating {
+  float:left;
+}
+.rating:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+  clip:rect(0,0,0,0);
+}
+.rating:not(:checked) > label {
+  float:right;
+  width:1.2em;
+  padding:0 .1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:150%;
+  line-height:1.2;
+  color:#ddd;
+  text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+.rating:not(:checked) > label:before {
+  content: '★ ';
+}
+.rating > input:checked ~ label {
+  color: #f70;
+  text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: gold;
+  text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: #ea0;
+  text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+.rating > label:active {
+  position:relative;
+  top:2px;
+  left:2px;
+}
+.navbar-toggle {
+  border: none;
+  background: transparent !important;
+}
+.navbar-toggle:hover {
+  background: transparent !important;
+}
+.navbar-toggle .icon-bar {
+  width: 22px;
+  transition: all 0.2s;
+}
+.navbar-toggle .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+.navbar-toggle .middle-bar {
+  opacity: 0;
+}
+.navbar-toggle .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+.navbar-toggle.collapsed .top-bar {
+  transform: rotate(0);
+}
+.navbar-toggle.collapsed .middle-bar {
+  opacity: 1;
+}
+.navbar-toggle.collapsed .bottom-bar {
+  transform: rotate(0);
 }
 
 /* Tablet Screens */
@@ -126,6 +219,6 @@ body {
 	#contact .social {
 		display: inline-block;
 		border-radius: 12px;
-		box-shadow:0 2px #666
+		box-shadow:0 2px #666;
 	}
 }
