@@ -207,6 +207,9 @@ fieldset {
 	.col-md-4 h3 {
 		font-size: 1.5em;
 	}
+	fieldset {
+		width: 80%;
+	}
 	#about {
 		margin: 0 1em;
 	} 
