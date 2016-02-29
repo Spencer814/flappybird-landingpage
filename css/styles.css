@@ -6064,6 +6064,11 @@ fieldset {
     padding-top: 1em; }
   .col-md-4 h3 {
     font-size: 1.5em; }
+  .form {
+    width: 95%; }
+  fieldset {
+    width: 60%;
+    margin: 0 2.8em; }
   #about {
     margin: 0 1em; }
   #contact .row {
