@@ -21,6 +21,7 @@ $gold: gold;
 $color_copper_approx: #b57340;
 $golden_grass:  goldenrod;
 $color_yellow_sea_approx: #ea0;
+$color_tuna_approx: #333c47;
 
 /*\fonts*/
 $font_0: Arial;
@@ -88,6 +89,22 @@ body {
 		margin: 10px;
 		font-size: 1.5em;
 	}
+	img {
+		width: 64px;
+		height: 64px;
+	}
+	#spec img {
+		width: 64px;
+		height: 61px;
+		padding: 0 30px 30px 0;
+	}
+}
+#spec {
+	width: 64px;
+	height: 64px;
+	margin: -2.5px;
+	border-radius: 8.5px;
+	background: $color_tuna_approx;
 }
 .navbar {
 	padding: 7px 0;
