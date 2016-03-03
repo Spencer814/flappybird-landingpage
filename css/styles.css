@@ -5914,6 +5914,22 @@ body {
   margin: 10px;
   font-size: 1.5em; }
 
+#contact img {
+  width: 64px;
+  height: 64px; }
+
+#contact #spec img {
+  width: 64px;
+  height: 61px;
+  padding: 0 30px 30px 0; }
+
+#spec {
+  width: 64px;
+  height: 64px;
+  margin: -2.5px;
+  border-radius: 8.5px;
+  background: #333c47; }
+
 .navbar {
   padding: 7px 0; }
 
