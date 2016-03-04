@@ -90,21 +90,18 @@ body {
 		font-size: 1.5em;
 	}
 	img {
-		width: 64px;
-		height: 64px;
-	}
-	#spec img {
-		width: 64px;
-		height: 61px;
-		padding: 0 30px 30px 0;
+		width: 68px;
 	}
 }
 #spec {
-	width: 64px;
-	height: 64px;
+	width: 58px;
+	height: 58px;
 	margin: -2.5px;
 	border-radius: 8.5px;
 	background: $color_tuna_approx;
+	img {
+		padding: .5em;
+	}
 }
 .navbar {
 	padding: 7px 0;
@@ -138,6 +135,14 @@ body {
 	/*\Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)*/
 	box-shadow: 0 1px 2px 1px $color_steel_blue_approx;
 }
+#about h4 {
+	margin: 2em 0;
+}
+.col-md-4 img {
+	border: 2px solid $color_steel_blue_approx;
+	@include border-radius;
+	width: 80%;
+}
 .form-horizontal {
 	width: 90%;
 	margin: 0 auto;
@@ -147,7 +152,10 @@ fieldset {
 	margin: 0 4.3em;
 }
 .rating {
-	float: left;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: auto;
 	> label {
 		&:active {
 			position: relative;
@@ -251,6 +259,7 @@ fieldset {
 		}
 	}
 }
+
 @media only screen and(min-width: 768px) and(max-width: 1025px) {
 	.btn {
 		font-size: 1.5em;
@@ -283,6 +292,39 @@ fieldset {
 		font-size: 1.8em;
 	}
 }
+
+@media only screen and(min-width: 412px) {
+	#contact {
+		img {
+			width: 67px;
+		}
+	}
+}
+
+@media only screen and(min-width: 384px) {
+	#contact {
+		img {
+			width: 62px;
+		}
+	}
+}
+
+@media only screen and(min-width: 375px) {
+	#contact {
+		img {
+			width: 60px;
+		}
+	}
+}
+
+@media only screen and(min-width: 360px) {
+	#contact {
+		img {
+			width: 57px;
+		}
+	}
+}
+
 @media only screen and(min-width: 320px) and(max-width: 767px) {
 	.navbar-brand {
 		display: inline-block;
@@ -322,16 +364,11 @@ fieldset {
 			@include border-radius;
 			@include box-shadow(shadow-1, shadow-2, shadow-3, shadow-4, shadow-5, shadow-6, shadow-7, shadow-8, shadow-9, shadow-10);
 		}
+		img {
+			width: 49px;
+		}
 	}
 	.social {
 		display: none;
 	}
-}
-#about h4 {
-	margin: 2em 0;
-}
-.col-md-4 img {
-	border: 2px solid $color_steel_blue_approx;
-	@include border-radius;
-	width: 80%;
 }
