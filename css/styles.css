@@ -5915,20 +5915,16 @@ body {
   font-size: 1.5em; }
 
 #contact img {
-  width: 64px;
-  height: 64px; }
-
-#contact #spec img {
-  width: 64px;
-  height: 61px;
-  padding: 0 30px 30px 0; }
+  width: 68px; }
 
 #spec {
-  width: 64px;
-  height: 64px;
+  width: 58px;
+  height: 58px;
   margin: -2.5px;
   border-radius: 8.5px;
   background: #333c47; }
+  #spec img {
+    padding: .5em; }
 
 .navbar {
   padding: 7px 0; }
@@ -5960,6 +5956,14 @@ body {
   /*\Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)*/
   box-shadow: 0 1px 2px 1px #337ab7; }
 
+#about h4 {
+  margin: 2em 0; }
+
+.col-md-4 img {
+  border: 2px solid #337ab7;
+  border-radius: 12px / 12px;
+  width: 80%; }
+
 .form-horizontal {
   width: 90%;
   margin: 0 auto; }
@@ -5969,7 +5973,10 @@ fieldset {
   margin: 0 4.3em; }
 
 .rating {
-  float: left; }
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: auto; }
   .rating > label:active {
     position: relative;
     top: 2px;
@@ -6067,6 +6074,22 @@ fieldset {
   .container h4 {
     font-size: 1.8em; } }
 
+@media only screen and (min-width: 412px) {
+  #contact img {
+    width: 67px; } }
+
+@media only screen and (min-width: 384px) {
+  #contact img {
+    width: 62px; } }
+
+@media only screen and (min-width: 375px) {
+  #contact img {
+    width: 60px; } }
+
+@media only screen and (min-width: 360px) {
+  #contact img {
+    width: 57px; } }
+
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .navbar-brand {
     display: inline-block; }
@@ -6093,13 +6116,7 @@ fieldset {
     display: inline-block;
     border-radius: 12px / 12px;
     box-shadow: 0 2px #666; }
+  #contact img {
+    width: 49px; }
   .social {
     display: none; } }
-
-#about h4 {
-  margin: 2em 0; }
-
-.col-md-4 img {
-  border: 2px solid #337ab7;
-  border-radius: 12px / 12px;
-  width: 80%; }
